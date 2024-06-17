@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      data-purpose="Layout StyleSheet"
+      title="Web Awesome"
+      href="/css/app-wa-612dd696ed96d6777d290343ca9cef9d.css?vsn=d"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lemon&family=Markazi+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.oogleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Take Extra Lecrture</title>
+    <link rel="stylesheet" href="TakeExtraLec.css" />
+    <style>
+      * {
+        font-family: Bree Serif, Helvetica, sans-serif;
+        font-size: 4.5vw;
+      }
+      body {
+        margin: 0%;
+      }
+      .header {
+        text-align: center;
+        font-size: 7vw;
+        color: rgb(120, 71, 8);
+        text-shadow: 2px 19px 13px rgba(245, 245, 220, 1);
+        margin-bottom: 3vh;
+      }
+      .header2 {
+        text-align: center;
+        font-size: 8vw;
+        color: rgb(120, 71, 8);
+        text-shadow: 2px 19px 13px rgba(245, 245, 220, 1);
+        /* margin-bottom: 10px; */
+      }
+      .container1 {
+        display: flex;
+        justify-content: center;
+        /* border: solid 1px; */
+        height: 15vh;
+        display: grid;
+        grid-template-columns: 40vw 40vw;
+        grid-template-rows: 6vh 6vh;
+        grid-column-gap: 10%;
+        grid-row-gap: 20%;
+        /* display: none; */
+      }
+      .selection {
+        height: 6vh;
+        border: solid 1px;
+        border-radius: 10px;
+        margin-top: vh;
+        display: flex;
+        background-color: #e3edf7;
+      }
+      .dabba3 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+      .icon {
+        width: 20vw;
+        display: flex;
+        align-items: center;
+        border-right: solid 1px;
+        justify-content: center;
+        border-top-left-radius: 10px;
+        background-color: aquamarine;
+        border-bottom-left-radius: 10px;
+      }
+      .selecteditem {
+        width: 30vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e3edf7;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      .ttcontainer {
+        display: none;
+      }
+      .containerfirst {
+        margin-top: 20vh;
+        /* display: none; */
+      }
+      option {
+        font-size: 3vw;
+        background-color: wheat;
+      }
+      .button {
+        /* border: solid 1px; */
+        height: 6vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5vh;
+      }
+      .continue {
+        height: 6vh;
+        width: 60vw;
+        border-radius: 5px;
+        border: solid 1px;
+        background-color: wheat;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="containerfirst">
+      <div class="header">Select the Class and Batches</div>
+      <div class="container1">
+        <div class="selection">
+          <div class="icon"><i class="fa-solid fa-screen-users fa-xl"></i></div>
+          <select class="selecteditem" id="classSelect">
+            <option value="1">Class</option>
+            <option value="2">Class I</option>
+            <option value="3">Class II</option>
+            <option value="4">Class III</option>
+          </select>
+        </div>
+        <div class="selection">
+          <div class="icon">
+            <i class="fa-solid fa-boxes-stacked fa-xl"></i>
+          </div>
+          <select class="selecteditem" style="width: 20vw" id="divisionSelect">
+            <option value="1">Division</option>
+            <option value="2">A</option>
+            <option value="3">B</option>
+            <option value="4">C</option>
+            <option value="5">B1</option>
+            <option value="6">B2</option>
+            <option value="7">B3</option>
+            <option value="8">B4</option>
+            <option value="9">B5</option>
+            <option value="10">B6</option>
+          </select>
+        </div>
+        <div class="selection dabba3">
+          <div class="icon"><i class="fa-solid fa-books fa-xl"></i></div>
+          <select class="selecteditem" style="width: 50vw" id="subjectSelect">
+            <option value="1">Subject</option>
+            <option value="2">PWP Pr</option>
+            <option value="3">MAD Th</option>
+            <option value="4">ETI</option>
+            <option value="5">MNG</option>
+            <option value="6">NIS Th</option>
+            <option value="7">MAD Pr</option>
+            <option value="8">CPE</option>
+          </select>
+        </div>
+      </div>
+      <div class="button">
+        <button class="continue" id="continueBtn" disabled>Continue</button>
+      </div>
+    </div>
+
+    <div class="ttcontainer">
+      <div class="header2">Select The lecture</div>
+      <div class="parent-container">
+        <div class="day-time-cotainer">
+          <div class="box" id="dt">
+            <div class="day">Day</div>
+            <div class="time">Time</div>
+          </div>
+          <div class="box times" id="lec1-time">Time</div>
+          <div class="box times" id="lec2-time">Time</div>
+          <div class="box times" id="lec3-time">Time</div>
+          <div class="box times" id="lec4-time">Time</div>
+          <div class="box times" id="lec5-time">Time</div>
+          <div class="box times" id="lec6-time">Time</div>
+        </div>
+        <div class="container">
+          <div class="box days">Monday</div>
+          <div class="box days">Tuesday</div>
+          <div class="box days">Wednesday</div>
+          <div class="box days">Thursday</div>
+          <div class="box days">Friday</div>
+          <div class="box days">Saturday</div>
+
+          <div class="box item" id="mon-lec1">ranak</div>
+          <div class="box item" id="">
+            MAD <br />
+            MR samarth Pandit
+          </div>
+          <div class="box item" id="">Brijendra Tiwari</div>
+          <div class="box item" id="">Dabba 12</div>
+          <div class="box item" id="">Dabba 13</div>
+          <div class="box item" id="">Dabba 14</div>
+
+          <div class="box item" id="mon-lec2">Dabba 16</div>
+          <div class="box item" id="">Dabba 17</div>
+          <div class="box item" id="">Dabba 18</div>
+          <div class="box item" id="">Dabba 19</div>
+          <div class="box item" id="">Dabba 20</div>
+          <div class="box item" id="">Dabba 21</div>
+
+          <div class="box item" id="mon-lec3">Dabba 23</div>
+          <div class="box item" id="">Dabba 24</div>
+          <div class="box item" id="">Dabba 25</div>
+          <div class="box item" id="">Dabba 26</div>
+          <div class="box item" id="">Dabba 27</div>
+          <div class="box item" id="">Dabba 28</div>
+
+          <div class="box item" id="mon-lec4">Dabba 30</div>
+          <div class="box item" id="">Dabba 31</div>
+          <div class="box item" id="">Dabba 32</div>
+          <div class="box item" id="">Dabba 33</div>
+          <div class="box item" id="">Dabba 34</div>
+          <div class="box item" id="">Dabba 35</div>
+
+          <div class="box item" id="mon-lec5">Dabba 37</div>
+          <div class="box item" id="">Dabba 38</div>
+          <div class="box item" id="">Dabba 39</div>
+          <div class="box item" id="">Dabba 40</div>
+          <div class="box item" id="">Dabba 41</div>
+          <div class="box item" id="">Dabba 42</div>
+
+          <div class="box item" id="mon-lec6">Dabba 44</div>
+          <div class="box item" id="">Dabba 45</div>
+          <div class="box item" id="">Dabba 46</div>
+          <div class="box item" id="">Dabba 47</div>
+          <div class="box item" id="">Dabba 48</div>
+          <div class="box item" id="">Dabba 49</div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="clear btn" id="backButton">Cancel</button>
+        <button
+          class="proceed btn"
+          id="myButton"
+          onclick="navigateToTargetPage()"
+        >
+          Proceed
+        </button>
+      </div>
+    </div>
+    <script src="Select_lecs.js"></script>
+    <script>
+      // JavaScript to disable button if all selects are at default values
+      document.addEventListener("DOMContentLoaded", function () {
+        const classSelect = document.getElementById("classSelect");
+        const divisionSelect = document.getElementById("divisionSelect");
+        const subjectSelect = document.getElementById("subjectSelect");
+        const continueBtn = document.getElementById("continueBtn");
+
+        function checkSelections() {
+          if (
+            classSelect.value === "1" ||
+            divisionSelect.value === "1" ||
+            subjectSelect.value === "1"
+          ) {
+            continueBtn.disabled = true;
+          } else {
+            continueBtn.disabled = false;
+          }
+        }
+
+        // Initial check
+        checkSelections();
+
+        classSelect.addEventListener("change", checkSelections);
+        divisionSelect.addEventListener("change", checkSelections);
+        subjectSelect.addEventListener("change", checkSelections);
+      });
+    </script>
+  </body>
+</html>

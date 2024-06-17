@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      data-purpose="Layout StyleSheet"
+      title="Web Awesome"
+      href="/css/app-wa-612dd696ed96d6777d290343ca9cef9d.css?vsn=d"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lemon&family=Markazi+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <title>Mark Attendance</title>
+    <style>
+      * {
+        font-family: Bree Serif, Helvetica, sans-serif;
+      }
+      body {
+        margin: 0;
+      }
+      .header {
+        text-align: center;
+        font-size: 4vh;
+        color: rgb(120, 71, 8);
+        text-shadow: 2px 19px 13px rgba(245, 245, 220, 1);
+        margin-bottom: 2vh;
+      }
+      .container {
+        /* border: solid 1px; */
+        height: 88vh;
+
+        display: grid;
+        grid-template-rows: 10vh 70vh;
+      }
+      .box {
+        /* border: solid 1px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .class {
+        height: 6vh;
+        width: 40vw;
+        display: flex;
+        border: solid 1px;
+        margin-right: 3vw;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .div {
+        height: 6vh;
+        width: 40vw;
+        display: flex;
+        margin-left: 3vw;
+        border: solid 1px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .icon {
+        width: 15vw;
+        height: 6vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: aquamarine;
+        border-right: solid 1.5px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+      .label {
+        width: 25vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e3edf7;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      .save {
+        height: 6vh;
+        width: 90vw;
+        border: none;
+        border-radius: 10px;
+        font-size: larger;
+        background-color: aquamarine;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .list-container {
+        /* border: solid 1px; */
+        border-radius: 5px;
+        height: 68vh;
+        width: 95%;
+        margin: 0 2% 0 2%;
+        overflow-y: auto;
+        background-color: #e3edf7;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .list {
+        /* border: solid 1px; */
+        width: 92vw;
+        height: 6vh;
+        border-radius: 10px;
+        margin: 1vh 1.5vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .roll-no {
+        height: 100%;
+        width: 13vw;
+        border-radius: 5px;
+        /* border: solid 1px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(248, 190, 45);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .name {
+        height: 100%;
+        width: 60vw;
+        border-radius: 5px;
+        /* border: solid 1px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: antiquewhite;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .status {
+        height: 100%;
+        width: 13vw;
+        border-radius: 5px;
+        /* border: solid 1px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: aquamarine;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .subject {
+        /* border: solid 1px; */
+        height: 4vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Take Attendance</div>
+    <div class="subject"><label id="subject">Subject</label></div>
+    <div class="container">
+      <div class="box">
+        <div class="class">
+          <div class="icon"><i class="fa-solid fa-screen-users fa-xl"></i></div>
+          <div class="label" id="class-n">class</div>
+        </div>
+        <div class="div">
+          <div class="icon">
+            <i class="fa-solid fa-boxes-stacked fa-xl"></i>
+          </div>
+          <div class="label" id="div">div/batch</div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="list-container">
+          <div class="list">
+            <div class="roll-no">100</div>
+            <div class="name">Brijebdra Rajdhar Tiwari</div>
+            <div class="status">P</div>
+          </div>
+          <div class="list">
+            <div class="roll-no">100</div>
+            <div class="name">Brijebdra Rajdhar Tiwari</div>
+            <div class="status">P</div>
+          </div>
+          <div class="list">
+            <div class="roll-no">100</div>
+            <div class="name">Brijebdra Rajdhar Tiwari</div>
+            <div class="status">P</div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <button class="save" onclick="save()">Save</button>
+      </div>
+    </div>
+
+    <script>
+      // Retrieve the stored content from sessionStorage
+      var classn = sessionStorage.getItem("class-n");
+      var div = sessionStorage.getItem("div");
+      var subject = sessionStorage.getItem("sub");
+
+      // Display the content in the specified element
+      document.getElementById("class-n").innerHTML = subject;
+      document.getElementById("subject").innerHTML = classn;
+      document.getElementById("div").innerHTML = div;
+
+      // Checking its Division or Batch
+      var where;
+      if (div.length <= 1) {
+        where = "division";
+      } else {
+        where = "batch";
+      }
+
+      // const address = "13.127.193.171";
+      const address = "localhost";
+      where = "division"
+      div = "A";
+      fetch(`http://${address}:3013/markattendance`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: `SELECT rollno, name FROM student WHERE ${where} ='${div}'`,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          let html = ""; // Initialize an empty string to store HTML
+
+          data.forEach((row, index) => {
+            // Create div element with class "list"
+            let listDiv = document.createElement("div");
+            listDiv.classList.add("list");
+
+            // Create div elements with classes "roll-no", "name", and "status"
+            let rollnoDiv = document.createElement("div");
+            let nameDiv = document.createElement("div");
+            let statusDiv = document.createElement("div");
+
+            // Set ids for div elements
+            rollnoDiv.id = `rollno${index}`;
+            nameDiv.id = `name${index}`;
+            statusDiv.id = `status${index}`;
+
+            // Set classes for div elements
+            rollnoDiv.classList.add("roll-no");
+            nameDiv.classList.add("name");
+            statusDiv.classList.add("status");
+
+            // Set text content for rollno and name divs
+            rollnoDiv.textContent = row.rollno;
+            nameDiv.textContent = row.name;
+
+            // Set default status
+            statusDiv.textContent = "P";
+
+            // Append rollno, name, and status divs to list div
+            listDiv.appendChild(rollnoDiv);
+            listDiv.appendChild(nameDiv);
+            listDiv.appendChild(statusDiv);
+
+            // Append list div to the HTML string
+            html += listDiv.outerHTML;
+          });
+
+          // Set the innerHTML of .list-container to the generated HTML string
+          document.querySelector(".list-container").innerHTML = html;
+          document.querySelectorAll(".status").forEach((item) => {
+            let originalBackgroundColor = item.style.backgroundColor;
+            let originalInnerHTML = item.innerHTML;
+            let isModified = false;
+
+            item.addEventListener("click", (event) => {
+              if (!isModified) {
+                item.style.backgroundColor = "rgb(244, 62, 34)";
+                item.innerHTML = "A";
+              } else {
+                item.style.backgroundColor = originalBackgroundColor;
+                item.innerHTML = originalInnerHTML;
+              }
+              isModified = !isModified;
+            });
+          });
+        })
+        .catch((error) => console.error("Error:", error));
+
+      function save() {
+        // Create a new Date object representing the current date and time
+        const currentDate = new Date();
+
+        // Get the day, month, and year components of the current date
+        const day = currentDate.getDate();
+        const month = currentDate.getMonth() + 1; // Month is zero-based, so add 1
+        const year = currentDate.getFullYear();
+
+        // Format the date as "DD/MM/YYYY"
+        const formattedDate = `${day}/${month}/${year}`;
+        
+        // Initialize empty arrays to store names of students and their presence status
+        let namesofstudent = [];
+        let presentystatus = [];
+
+        // Iterate through each student
+        document.querySelectorAll(".list").forEach((listDiv, index) => {
+          // Get the name and status for each student
+          let name = document.getElementById(`name${index}`).textContent;
+          let status = document.getElementById(`status${index}`).textContent;
+          name = name.replace(/\s+/g, "_");
+          // Push the name and presence status into their respective arrays
+          namesofstudent.push(`${name}`);
+          presentystatus.push(`'${status}'`);
+        });
+
+        // Generate the MySQL query
+        let query = `INSERT INTO ${subject} (Date,${namesofstudent.join(
+          ", "
+        )}) VALUES ('${formattedDate}',${presentystatus.join(", ")})`;
+
+        console.log(query);
+
+        // Send the query to the backend Node.js server
+        fetch(`http://${address}:3013/saveData`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ query }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Query executed successfully:", data);
+          })
+          .catch((error) => {
+            console.error("Error executing query:", error);
+          });
+      }
+    </script>
+  </body>
+</html>

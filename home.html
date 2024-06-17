@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      data-purpose="Layout StyleSheet"
+      title="Web Awesome"
+      href="/css/app-wa-612dd696ed96d6777d290343ca9cef9d.css?vsn=d"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lemon&family=Markazi+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Student Home</title>
+    <style>
+      * {
+        font-family: Bree Serif, Helvetica, sans-serif;
+      }
+      html,
+      body {
+        margin: 0;
+
+        height: 100%;
+        width: 100%;
+      }
+      /* Home css */
+      .top_nav {
+        width: 100%;
+        background: rgb(0, 212, 255);
+        background: radial-gradient(
+          circle,
+          rgba(0, 212, 255, 1) 0%,
+          rgba(250, 235, 215, 1) 100%
+        );
+        position: fixed;
+        top: 0;
+        display: flex;
+        align-items: center;
+      }
+
+      /* Profile  */
+      .profile-container {
+        float: left;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        margin: 10px 15px 10px 15px;
+      }
+
+      .profile-image {
+        width: 60px;
+        height: 60px;
+        display: block;
+      }
+      /* Profile  */
+
+      /* lables  */
+      .lables {
+        font-size: smaller;
+        display: flex;
+        flex-direction: column;
+      }
+      /* lables  */
+
+      /* Eligibility */
+      .menubtn {
+        /* border: solid 1px; */
+        position: fixed;
+        right: 5px;
+        overflow: hidden;
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+        margin: 10px 15px 10px 15px;
+        width: 30px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Eligibility */
+
+      .Lectures {
+        margin: 90px 10px 0px 10px;
+        /* padding-bottom: 25%; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        /* display: none; */
+      }
+      .lecture {
+        border: 1px solid;
+        /* border: none; */
+        /* background-color: aquamarine; */
+        background-color: #e3edf7;
+        border-radius: 10px;
+        margin: 0.3vh 0px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        padding: 10px;
+        text-align: start;
+        /* display: flex; */
+        /* justify-content: center;
+        align-items: center; */
+        width: 97vw;
+      }
+      .upperdiv {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .lec-marked {
+        width: 70px;
+        height: 50px;
+      }
+      #presenty-status {
+        width: 13vw;
+      }
+      .lec-score {
+        width: 110px;
+        height: 110px;
+        display: flex;
+        position: relative;
+        margin-right: 20px;
+      }
+      .lec-detail {
+        font-size: 4vw;
+        display: flex;
+        flex-direction: column;
+        width: 38vw;
+        margin: 1.5vw;
+      }
+      .lec-status {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: large;
+      }
+      .outer {
+        /* border: solid 1px; */
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+          -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+      }
+      .inner {
+        /* border: solid 1px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+          inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+          -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+          0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+          0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+      }
+      #number {
+        font-weight: 600px;
+        color: black;
+      }
+      circle {
+        fill: none;
+        stroke: url(#GradientColor);
+        /* stroke:orangered; */
+        stroke-width: 19px;
+        stroke-dashoffset: 252;
+        stroke-dasharray: 252;
+        animation: anim 2s linear forwards;
+      }
+      @keyframes anim {
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+      svg {
+        position: absolute;
+        top: 0.6px;
+        left: 1px;
+      }
+      .menubtn {
+        display: none;
+      }
+      .menulist {
+        top: 7.5vh;
+        left: 20vw;
+        position: absolute;
+        /* border: solid 1px; */
+        height: 15vh;
+        width: 70vw;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: wheat;
+        justify-content: center;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+          -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+      }
+      .mnlist {
+        text-decoration: none;
+        color: black;
+        border: solid 1px;
+        border-radius: 5px;
+        height: 5vh;
+        width: 60vw;
+        margin: 2%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        background-color: aquamarine;
+        font-size: 4.5vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Lectures">
+      <button class="item lecture" onclick="displayContent(this)">
+        <div class="upperdiv">
+          <div class="lec-score">
+            <div class="outer">
+              <div class="inner">
+                <div id="lec1-score">75%</div>
+              </div>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              width="100px"
+              height="100px"
+            >
+              <defs>
+                <linearGradient id="GradientColor">
+                  <stop offset="0%" stop-color="#e91e63" />
+                  <stop offset="100%" stop-color="#673ab7" />
+                </linearGradient>
+              </defs>
+              <circle cx="50" cy="50" r="40" stroke-linecap="" />
+            </svg>
+          </div>
+          <div class="lec-detail">
+            <div class="class-n">Class</div>
+            <div class="div" id="row1">A</div>
+            <div class="subject-n" id="row2">PWP (pr)</div>
+          </div>
+          <div class="lec-marked">
+            <img id="presenty-status" src="checkmark-box-green-icon.png" />
+          </div>
+        </div>
+        <div class="lec-status">Ended</div>
+      </button>
+      <button class="item lecture" onclick="displayContent(this)">
+        <div class="upperdiv">
+          <div class="lec-score">
+            <div class="outer">
+              <div class="inner">
+                <div id="lec1-score">75%</div>
+              </div>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              width="100px"
+              height="100px"
+            >
+              <defs>
+                <linearGradient id="GradientColor">
+                  <stop offset="0%" stop-color="#e91e63" />
+                  <stop offset="100%" stop-color="#673ab7" />
+                </linearGradient>
+              </defs>
+              <circle cx="50" cy="50" r="40" stroke-linecap="" />
+            </svg>
+          </div>
+          <div class="lec-detail">
+            <div class="class-n">Class</div>
+            <div class="div" id="row3">B6</div>
+            <div class="subject-n" id="row4">PWP (pr)</div>
+          </div>
+          <div class="lec-marked">
+            <img id="presenty-status" src="checkmark-box-green-icon.png" />
+          </div>
+        </div>
+        <div class="lec-status">Ended</div>
+      </button>
+      <button class="item lecture" onclick="displayContent(this)">
+        <div class="upperdiv">
+          <div class="lec-score">
+            <div class="outer">
+              <div class="inner">
+                <div id="lec1-score">75%</div>
+              </div>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              width="100px"
+              height="100px"
+            >
+              <defs>
+                <linearGradient id="GradientColor">
+                  <stop offset="0%" stop-color="#e91e63" />
+                  <stop offset="100%" stop-color="#673ab7" />
+                </linearGradient>
+              </defs>
+              <circle cx="50" cy="50" r="40" stroke-linecap="" />
+            </svg>
+          </div>
+          <div class="lec-detail">
+            <div class="class-n">Class</div>
+            <div class="div" id="row5">Division</div>
+            <div class="subject-n" id="row6">PWP (pr)</div>
+          </div>
+          <div class="lec-marked">
+            <img id="presenty-status" src="checkmark-box-green-icon.png" />
+          </div>
+        </div>
+        <div class="lec-status">Ended</div>
+      </button>
+      <button class="item lecture" onclick="displayContent(this)">
+        <div class="upperdiv">
+          <div class="lec-score">
+            <div class="outer">
+              <div class="inner">
+                <div id="lec1-score">75%</div>
+              </div>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              width="100px"
+              height="100px"
+            >
+              <defs>
+                <linearGradient id="GradientColor">
+                  <stop offset="0%" stop-color="#e91e63" />
+                  <stop offset="100%" stop-color="#673ab7" />
+                </linearGradient>
+              </defs>
+              <circle cx="50" cy="50" r="40" stroke-linecap="" />
+            </svg>
+          </div>
+          <div class="lec-detail">
+            <div class="class-n">Class</div>
+            <div class="div" id="row7">Division</div>
+            <div class="subject-n" id="row8">PWP (pr)</div>
+          </div>
+          <div class="lec-marked">
+            <img id="presenty-status" src="checkmark-box-green-icon.png" />
+          </div>
+        </div>
+        <div class="lec-status">Ended</div>
+      </button>
+      <button class="item lecture" onclick="displayContent(this)">
+        <div class="upperdiv">
+          <div class="lec-score">
+            <div class="outer">
+              <div class="inner">
+                <div id="lec1-score">75%</div>
+              </div>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              width="100px"
+              height="100px"
+            >
+              <defs>
+                <linearGradient id="GradientColor">
+                  <stop offset="0%" stop-color="#e91e63" />
+                  <stop offset="100%" stop-color="#673ab7" />
+                </linearGradient>
+              </defs>
+              <circle cx="50" cy="50" r="40" stroke-linecap="" />
+            </svg>
+          </div>
+          <div class="lec-detail">
+            <div class="class-n">Class</div>
+            <div class="div" id="row9">Division</div>
+            <div class="subject-n" id="row10">PWP (pr)</div>
+          </div>
+          <div class="lec-marked">
+            <img id="presenty-status" src="checkmark-box-green-icon.png" />
+          </div>
+        </div>
+        <div class="lec-status">Ended</div>
+      </button>
+      <button class="item lecture" onclick="displayContent(this)">
+        <div class="upperdiv">
+          <div class="lec-score">
+            <div class="outer">
+              <div class="inner">
+                <div id="lec1-score">75%</div>
+              </div>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              width="100px"
+              height="100px"
+            >
+              <defs>
+                <linearGradient id="GradientColor">
+                  <stop offset="0%" stop-color="#e91e63" />
+                  <stop offset="100%" stop-color="#673ab7" />
+                </linearGradient>
+              </defs>
+              <circle cx="50" cy="50" r="40" stroke-linecap="" />
+            </svg>
+          </div>
+          <div class="lec-detail">
+            <div class="class-n">Class</div>
+            <div class="div" id="row11">Division</div>
+            <div class="subject-n" id="row12">PWP (pr)</div>
+          </div>
+          <div class="lec-marked">
+            <img id="presenty-status" src="checkmark-box-green-icon.png" />
+          </div>
+        </div>
+        <div class="lec-status">Ended</div>
+      </button>
+    </div>
+    <div class="top_nav">
+      <div class="profile-container">
+        <a href="profile.html" target="_top"
+          ><img src="ganesha.jpg" alt="Profile Image" class="profile-image"
+        /></a>
+      </div>
+
+      <div class="lables">
+        <div class="lab S_name">S_name</div>
+        <div class="lab Enrollment no">Enrollment no</div>
+        <div class="lab Roll no">Roll no</div>
+      </div>
+      <div class="menubtn" onclick="drp()">
+        <i class="fa-solid fa-bars fa-xl"></i>
+      </div>
+      <div class="menulist">
+        <a class="mnlist" href="takeextralec.html" target="_top"
+          >Take Extra Lecture</a
+        >
+        <a class="mnlist" href="cancellecture.html" target="_top"
+          >Cancel/uncancel the Lecture</a
+        >
+      </div>
+    </div>
+    <script>
+      // var username = Android.getUsername();
+      // username = username.replace(/\s+/g, "_");
+      window.onload = function () {
+        var currentDate = new Date();
+
+        // Array of day names
+        var daysOfWeek = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+
+        // Get the day of the week (0-6) and use it to access the corresponding day name from the array
+        var dayName = daysOfWeek[currentDate.getDay()];
+
+        // const address = "ec2-65-2-153-109.ap-south-1.compute.amazonaws.com";
+        // const address = "13.127.193.171";
+        const adress = "localhost"
+        var username = Android.getUsername();
+
+        username = username.replace(/\s+/g, "_");
+
+        fetch(`http://${address}:3005/timetable`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            query: `SELECT ${dayName} FROM ${username}`,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            data.forEach((row, index) => {
+              document.getElementById(`row${index + 1}`).innerText =
+                row[dayName];
+            });
+          })
+          .catch((error) => console.error("Error:", error));
+      };
+    </script>
+    <script src="home.js"></script>
+  </body>
+</html>

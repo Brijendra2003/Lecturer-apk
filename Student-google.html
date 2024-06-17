@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Sign-in-google.css" />
+    <title>Student-google</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lemon&family=Markazi+Text&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <script type="text/javascript">
+      function saveUserData() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Validate input fields
+        if (username.length <= 0 || password.length < 10) {
+          alert("Please enter both username and password");
+          return;
+        }
+
+        // Call Android method to save user data
+        Android.saveUserData(username, password);
+
+        window.location.href = "Student_index.html";
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+      <div class="box">
+        <div class="main-logo">
+          <img src="Main-logo.png" alt="" />
+        </div>
+        <h2>Student</h2>
+        <h3><hr /></h3>
+        <label for="">
+          Enter your name as User-name and Enrollment-no as password
+        </label>
+        <form>
+          <div class="inputBox">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              required
+              onkeyup="this.setAttribute('value', this.value);"
+              value=""
+            />
+            <label>User-name</label>
+          </div>
+          <div class="inputBox">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              onkeyup="this.setAttribute('value', this.value);"
+              value=""
+            />
+            <i class="toggle-password fas fa-eye-slash" id="togglePassword"></i>
+            <label>Passward</label>
+          </div>
+          <input type="button" value="Login" onclick="saveUserData()" />
+          <input
+            type="button"
+            value="Get otp"
+            style="margin-top: 2%"
+            onclick="validation()"
+          />
+        </form>
+      </div>
+    </center>
+    <script>
+      const togglePassword = document.getElementById("togglePassword");
+      const passwordInput = document.getElementById("password");
+
+      togglePassword.addEventListener("click", function () {
+        const type =
+          passwordInput.getAttribute("type") === "password"
+            ? "text"
+            : "password";
+        passwordInput.setAttribute("type", type);
+
+        this.classList.toggle("fa-eye-slash");
+        this.classList.toggle("fa-eye");
+      });
+      var username = document.getElementById("username").value;
+      // let username="Samiran Maity"
+      const address = "localhost";
+      function validation() {
+        // username = username.replace(/\s+/g, "_");
+        fetch(`http://${address}:3018/authentication`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            query: `SELECT contact FROM lecturer WHERE name = '${username}'`,
+          }),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            const parsedData = JSON.parse(data); // Parse the JSON string into an object
+            // const subjects = Object.keys(parsedData[0]); // Extract the subject column names
+
+            console.log(parsedData[0].contact);
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    </script>
+  </body>
+</html>

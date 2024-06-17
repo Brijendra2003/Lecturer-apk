@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      data-purpose="Layout StyleSheet"
+      title="Web Awesome"
+      href="/css/app-wa-612dd696ed96d6777d290343ca9cef9d.css?vsn=d"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lemon&family=Markazi+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Student Home</title>
+    <style>
+      body {
+        margin: 0%;
+        padding: 0%;
+        font-family: Bree Serif, Helvetica, sans-serif;
+        background-image: url("Main-logo.png");
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        height: 88.8vh;
+        /* border: solid 1px; */
+      }
+
+      #app {
+        height: 100%;
+        /* margin-bottom: 56px; */
+      }
+
+      .bottom-nav {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #dce4ef;
+        overflow: hidden;
+        height: 11vh;
+      }
+      /* hover */
+      .fa-house-chimney {
+        padding: 18px 23px;
+        /* border: solid; */
+      }
+      .fa-list-check {
+        padding: 17px 25px;
+        /* border: solid; */
+      }
+      .fa-house-person-leave {
+        padding: 17px 23px;
+        /* border: solid; */
+      }
+      .fa-calendar-range {
+        padding: 17px 26px;
+        /* border: solid; */
+      }
+      .fa-solid {
+        border: none;
+        border-radius: 50px;
+        background-color: rgb(195, 195, 226);
+      }
+      /* hover */
+      .bottom-nav a {
+        color: rgb(0, 0, 0);
+        text-align: center;
+        text-decoration: none;
+        margin: 2% 1%;
+      }
+
+      p {
+        font-size: smaller;
+        margin: 12px 0px 0px 0px;
+      }
+
+      #content-container {
+        margin: 0% 0%;
+      }
+      a:hover {
+        background-color: none;
+      }
+      iframe {
+        margin: 0%;
+        /* border: solid 1px; */
+        width: 100%;
+        height: 89.3vh;
+      }
+
+      /* ----------------------------------- */
+    </style>
+  </head>
+  <body>
+    <iframe src="home.html" name="display" frameborder="0"></iframe>
+
+    <nav class="bottom-nav" id="bottomNav">
+      <a
+        id="home"
+        href="home.html"
+        onclick="loadPage('home.html')"
+        target="display"
+        ><i class="fa-solid fa-house-chimney fa-xl"></i>
+        <p>Home</p>
+      </a>
+
+      <a
+        id="trc"
+        href="trackAttendance.html"
+        onclick="loadPage('trackAttendance.html')"
+        target="display"
+        ><i class="fa-regular fa-list-check fa-xl"></i>
+        <p>Attendance</p>
+      </a>
+      <a
+        id="stl"
+        href="take_leave.html"
+        onclick="loadPage('take_leave.html')"
+        target="display"
+        ><i class="fa-regular fa-house-person-leave fa-xl"></i>
+        <p>Leave Req</p>
+      </a>
+      <a
+        id="stt"
+        href="time_table.html"
+        onclick="loadPage('time_table.html')"
+        target="display"
+        ><i class="fa-light fa-calendar-range fa-xl"></i>
+        <p>T-table</p>
+      </a>
+    </nav>
+
+    <script>
+      if (window.innerWidth > 450) {
+        alert(
+          "This project is designed specifically for an Android application. As a result, its user interface may not be optimized for computer screen sizes. Please adjust your screen by using the mobile orientation inspection mode for the best viewing experience."
+        );
+      }
+      window.onload = function () {
+        window.onpopstate = function (event) {
+          // Check if the back button was pressed
+          if (event.state && event.state.page) {
+            // Perform your desired action, e.g., navigate back
+            // window.history.back();
+            window.location.href = "inedex.html";
+          }
+        };
+
+        // Push a state to the history when the page loads
+        // window.history.pushState({page: 'initial'}, '');
+      };
+      let home = document.querySelector("#home");
+      let trc = document.querySelector("#trc");
+      let stl = document.querySelector("#stl");
+      let stt = document.querySelector("#stt");
+      function loadPage(page) {
+        switch (page) {
+          case "home.html":
+            home.innerHTML =
+              '<i class="fa-solid fa-house-chimney fa-xl"></i> <p>Home</p>';
+            trc.innerHTML =
+              '<i class="fa-regular fa-list-check fa-xl"></i> <p>Attendance</p>';
+            stl.innerHTML =
+              '<i class="fa-regular fa-house-person-leave fa-xl"></i> <p>Leave Req</p>';
+            stt.innerHTML =
+              '<i class="fa-light fa-calendar-range fa-xl"></i> <p>T-table</p>';
+            break;
+
+          case "trackAttendance.html": ////track attendance
+            home.innerHTML =
+              '<i class="fa-regular fa-house-chimney fa-xl"></i> <p>Home</p>';
+            trc.innerHTML =
+              '<i class="fa-solid fa-list-check fa-xl"></i> <p>Attendance</p>';
+            stl.innerHTML =
+              '<i class="fa-regular fa-house-person-leave fa-xl"></i> <p>Leave Req</p>';
+            stt.innerHTML =
+              '<i class="fa-light fa-calendar-range fa-xl"></i> <p>T-table</p>';
+            break;
+
+          case "take_leave.html": /// tacke leave
+            home.innerHTML =
+              '<i class="fa-regular fa-house-chimney fa-xl"></i> <p>Home</p>';
+            trc.innerHTML =
+              '<i class="fa-regular fa-list-check fa-xl"></i> <p>Attendance</p>';
+            stl.innerHTML =
+              '<i class="fa-solid fa-house-person-leave fa-xl"></i> <p>Leave Req</p>';
+            stt.innerHTML =
+              '<i class="fa-light fa-calendar-range fa-xl"></i> <p>T-table</p>';
+            break;
+
+          case "time_table.html": /// time table
+            home.innerHTML =
+              '<i class="fa-regular fa-house-chimney fa-xl"></i> <p>Home</p>';
+            trc.innerHTML =
+              '<i class="fa-regular fa-list-check fa-xl"></i> <p>Attendance</p>';
+            stl.innerHTML =
+              '<i class="fa-regular fa-house-person-leave fa-xl"></i> <p>Leave Req</p>';
+            stt.innerHTML =
+              '<i class="fa-solid fa-calendar-range fa-xl"></i> <p>T-table</p>';
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      data-purpose="Layout StyleSheet"
+      title="Web Awesome"
+      href="/css/app-wa-462d1fe84b879d730fe2180b0e0354e0.css?vsn=d"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lemon&family=Markazi+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Student time table</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Bree Serif, Helvetica, sans-serif;
+      }
+      .header {
+        text-align: center;
+        font-size: 4vh;
+        color: rgb(120, 71, 8);
+        text-shadow: 2px 19px 13px rgba(245, 245, 220, 1);
+        margin-bottom: 2vh;
+      }
+      .parent-container {
+        display: flex;
+        /* display: none; */
+      }
+      .day-time-cotainer {
+        display: grid;
+        grid-template-columns: 33vw;
+        grid-gap: 0.5vh;
+        margin: 0% 1% 0% 1%;
+        grid-template-rows: repeat(7, 12.7vh);
+      }
+      .container {
+        margin: 0% 1% 0% 0%;
+        display: grid;
+        grid-template-columns: repeat(6, 33vw);
+        grid-template-rows: repeat(7, 12.7vh);
+        grid-gap: 0.5vh;
+        overflow-x: auto;
+      }
+      .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px;
+        border-radius: 3px;
+        font-size: 2vh;
+        text-align: center;
+        background-color: #e3edf7;
+      }
+      #dt {
+        background: linear-gradient(
+          to top right,
+          antiquewhite calc(50% - 1px),
+          black,
+          aquamarine calc(50% + 1px)
+        );
+      }
+      .day {
+        position: relative;
+        left: 8vw;
+      }
+      .time {
+        position: relative;
+        top: 1vh;
+        right: 7vw;
+      }
+      .days {
+        background-color: aquamarine;
+      }
+      .times {
+        background-color: antiquewhite;
+      }
+      .edit {
+        position: absolute;
+        top: 1vh;
+        right: 4vw;
+        display: block;
+        text-align: center;
+      }
+      p {
+        margin: 0%;
+        font-size: smaller;
+      }
+
+      .dabba {
+        /* border: solid 1px; */
+        width: 90vw;
+        height: 20vh;
+        margin: 0 5vw 0 5vw;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .input {
+        border: solid 1px;
+        width: 100%;
+        height: 6vh;
+        border-radius: 5px;
+        display: flex;
+      }
+      .submit {
+        border: solid 1px;
+        width: 70vw;
+        height: 5vh;
+        border-radius: 5px;
+        background-color: #6ffcac;
+      }
+      .icon {
+        width: 15vw;
+        border-right: solid 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        background-color: aquamarine;
+      }
+      .fileinput {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 75vw;
+        /* border: solid 1px; */
+        background-color: aliceblue;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+      #file {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Time Table</div>
+    <div class="edit">
+      <i class="fa-solid fa-calendar-lines-pen"></i>
+      <p>Update</p>
+    </div>
+
+    <div class="upload-container" id="file">
+      <div class="uploadone dabba">
+        <label for="">upload your Time table first</label>
+        <div class="input">
+          <div class="icon">
+            <i class="fa-sharp fa-regular fa-file-xls fa-xl"></i>
+          </div>
+          <div class="fileinput">
+            <input id="Student" type="file" accept=".xlsx" />
+          </div>
+        </div>
+        <button class="submit" onclick="Students()">Submit</button>
+      </div>
+    </div>
+
+    <div class="parent-container" id="timet">
+      <div class="day-time-cotainer">
+        <div class="box" id="dt">
+          <div class="day">Day</div>
+          <div class="time">Time</div>
+        </div>
+        <div class="box times" id="lec1-time">
+          8:00 am <br />
+          to <br />
+          9:00 am
+        </div>
+        <div class="box times" id="lec2-time">
+          9:00 am <br />
+          to <br />
+          10:00 am
+        </div>
+        <div class="box times" id="lec3-time">
+          10:15 am <br />
+          to <br />
+          11:15 am
+        </div>
+        <div class="box times" id="lec4-time">
+          11:15 am <br />
+          to <br />
+          12:15 pm
+        </div>
+        <div class="box times" id="lec5-time">
+          12:45 pm <br />
+          to <br />
+          1:45 pm
+        </div>
+        <div class="box times" id="lec6-time">
+          1:45 pm <br />
+          to <br />
+          2:45 pm
+        </div>
+      </div>
+      <div class="container">
+        <div class="box days">Monday</div>
+        <div class="box days">Tuesday</div>
+        <div class="box days">Wednesday</div>
+        <div class="box days">Thursday</div>
+        <div class="box days">Friday</div>
+        <div class="box days">Saturday</div>
+
+        <div class="box">
+          <div class="sub" id="r1c1">r1c1</div>
+          <div class="ln" id="r2c1">r2c1</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r1c2">r1c2</div>
+          <div class="ln" id="r2c2">r2c2</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r1c3">r1c3</div>
+          <div class="ln" id="r2c3">r2c3</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r1c4">r1c4</div>
+          <div class="ln" id="r2c4">r2c4</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r1c5">r1c5</div>
+          <div class="ln" id="r2c5">r2c5</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r1c6">r1c6</div>
+          <div class="ln" id="r2c6">r2c6</div>
+        </div>
+
+        <div class="box">
+          <div class="sub" id="r3c1">r3c1</div>
+          <div class="ln" id="r4c1">r4c1</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r3c2">r3c2</div>
+          <div class="ln" id="r4c2">r4c2</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r3c3">r3c3</div>
+          <div class="ln" id="r4c3">r4c3</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r3c4">r3c4</div>
+          <div class="ln" id="r4c4">r4c4</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r3c5">r3c5</div>
+          <div class="ln" id="r4c5">r4c5</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r3c6">r3c6</div>
+          <div class="ln" id="r4c6">r4c6</div>
+        </div>
+
+        <div class="box">
+          <div class="sub" id="r5c1">r5c1</div>
+          <div class="ln" id="r6c1">r6c1</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r5c2">r5c2</div>
+          <div class="ln" id="r6c2">r6c2</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r5c3">r5c3</div>
+          <div class="ln" id="r6c3">r6c3</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r5c4">r5c4</div>
+          <div class="ln" id="r6c4">r6c4</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r5c5">r5c5</div>
+          <div class="ln" id="r6c5">r6c5</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r5c6">r5c6</div>
+          <div class="ln" id="r6c6">r6c6</div>
+        </div>
+
+        <div class="box">
+          <div class="sub" id="r7c1">r7c1</div>
+          <div class="ln" id="r8c1">r8c1</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r7c2">r7c2</div>
+          <div class="ln" id="r8c2">r8c2</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r7c3">r7c3</div>
+          <div class="ln" id="r8c3">r8c3</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r7c4">r7c4</div>
+          <div class="ln" id="r8c4">r8c4</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r7c5">r7c5</div>
+          <div class="ln" id="r8c5">r8c5</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r7c6">r7c6</div>
+          <div class="ln" id="r8c6">r8c6</div>
+        </div>
+
+        <div class="box">
+          <div class="sub" id="r9c1">r9c1</div>
+          <div class="ln" id="r10c1">r10c1</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r9c2">r9c2</div>
+          <div class="ln" id="r10c2">r10c2</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r9c3">r9c3</div>
+          <div class="ln" id="r10c3">r10c3</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r9c4">r9c4</div>
+          <div class="ln" id="r10c4">r10c4</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r9c5">r9c5</div>
+          <div class="ln" id="r10c5">r10c5</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r9c6">r9c6</div>
+          <div class="ln" id="r10c6">r10c6</div>
+        </div>
+
+        <div class="box">
+          <div class="sub" id="r11c1">r11c1</div>
+          <div class="ln" id="r12c1">r12c1</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r11c2">r11c2</div>
+          <div class="ln" id="r12c2">r12c2</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r11c3">r11c3</div>
+          <div class="ln" id="r12c3">r12c3</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r11c4">r11c4</div>
+          <div class="ln" id="r12c4">r12c4</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r11c5">r11c5</div>
+          <div class="ln" id="r12c5">r12c5</div>
+        </div>
+        <div class="box">
+          <div class="sub" id="r11c6">r11c6</div>
+          <div class="ln" id="r12c6">r12c6</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // var username = Android.getUsername();
+      // username = username.replace(/\s+/g, "_");
+
+      // var username = "Samiran Maity";
+      var username = Android.getUsername();
+
+      username = username.replace(/\s+/g, "_");
+
+      const address = "13.127.193.171";
+      // const address = "localhost";
+
+      const dataToSend = { data1: `${username}` };
+
+      fetch(`http://${address}:3003/username`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataToSend),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.error("Error:", error));
+
+      function fetchDataAndPopulateDivs() {
+        // Send a GET request to your Node.js backend
+        $.get(`http://${address}:3003/fetchDataFromDatabase`, function (data) {
+          if (typeof data === "string") {
+            // Try parsing the data as JSON
+            try {
+              data = JSON.parse(data);
+            } catch (error) {
+              console.error("Error parsing JSON data:", error);
+              return; // Exit early if parsing fails
+            }
+          }
+
+          if (!Array.isArray(data)) {
+            console.error("Data is not an array:", data);
+            return; // Exit early if data is not an array
+          }
+
+          console.log(data); // Verify the structure of the data
+
+          // Loop through each object in the array
+          data.forEach(function (rowData, rowIndex) {
+            // Loop through each day in the rowData object
+            for (var day in rowData) {
+              if (rowData.hasOwnProperty(day)) {
+                var columnIndex = getColumnIndex(day);
+                if (columnIndex !== -1) {
+                  $(`#r${rowIndex + 1}c${columnIndex}`).text(rowData[day]);
+                }
+              }
+            }
+          });
+        }).fail(function (xhr, status, error) {
+          console.error("Error occurred during GET request:", error);
+
+          var file = document.getElementById("file");
+          var timet = document.getElementById("timet");
+
+          file.style.display = "flex";
+          timet.style.display = "none";
+        });
+      }
+
+      // Function to get column index based on the day of the week
+      function getColumnIndex(day) {
+        switch (day) {
+          case "Monday":
+            return 1;
+          case "Tuesday":
+            return 2;
+          case "Wednesday":
+            return 3;
+          case "Thursday":
+            return 4;
+          case "Friday":
+            return 5;
+          case "Saturday":
+            return 6;
+          default:
+            return -1; // Handle other cases if necessary
+        }
+      }
+
+      // Call the function to fetch data and populate divs when the page is loaded
+      $(document).ready(function () {
+        fetchDataAndPopulateDivs();
+      });
+
+      function Students() {
+        uploadFile("Student");
+      }
+      async function uploadFile(fileid) {
+        const fileInput = document.getElementById(`${fileid}`);
+        const file = fileInput.files[0];
+
+        if (!file) {
+          alert("Please select a file.");
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append("file", file);
+
+        try {
+          const response = await fetch(`http://${address}:3004/upload`, {
+            method: "POST",
+            body: formData,
+          });
+
+          if (response.ok) {
+            alert("File uploaded successfully!");
+            location.reload();
+          } else {
+            const errorMessage = await response.text();
+            alert("Failed to upload file. Error: " + errorMessage);
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          alert("An error occurred. Please try again." + error);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lemon&family=Markazi+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="dropdown.css" />
+    <title>Proceed</title>
+    <style>
+      body {
+        /* margin: 0; */
+        font-family: Bree Serif, Helvetica, sans-serif;
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        /* margin: 0% 5%; */
+        display: grid;
+        /* grid-template-columns:100px 100px; */
+        grid-template-columns: 47vw 47vw;
+        /* grid-template-columns: minmax(1fr, 1fr); */
+        grid-template-rows: 36vh 7vh 7vh 7vh 7vh 20vh 7vh;
+        grid-gap: 10px;
+        text-align: center;
+      }
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: large;
+      }
+      .b1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+      .b2 {
+        box-shadow: rgb(160, 158, 158) 0px 0px 20px 0px;
+        border: 1px solid;
+        border-radius: 10px;
+
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-color: aquamarine;
+      }
+      .b3 {
+        box-shadow: rgb(160, 158, 158) 0px 0px 20px 0px;
+        border: 1px solid;
+        border-radius: 10px;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-color: antiquewhite;
+      }
+      .b4 {
+        box-shadow: rgb(160, 158, 158) 0px 0px 20px 0px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: aquamarine;
+      }
+      .b5 {
+        box-shadow: rgb(160, 158, 158) 0px 0px 20px 0px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: aquamarine;
+      }
+      .b6 {
+        box-shadow: rgb(160, 158, 158) 0px 0px 20px 0px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: antiquewhite;
+      }
+      .b7 {
+        box-shadow: rgb(160, 158, 158) 0px 0px 20px 0px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: antiquewhite;
+      }
+      .b8 {
+        box-shadow: rgb(160, 158, 158) 0px 0px 20px 0px;
+        border: 1px solid;
+        border-radius: 10px;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-color: #e3edf7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .b9 {
+        box-shadow: rgb(160, 158, 158) 0px 0px 20px 0px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: antiquewhite;
+      }
+      .b10 {
+        box-shadow: rgb(160, 158, 158) 0px 0px 20px 0px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: aquamarine;
+      }
+
+      .img {
+        height: 34vh;
+        width: 34vh;
+        border: 1px solid;
+        border-radius: 50%;
+        box-shadow: rgb(160, 158, 158) 0px 0px 94px 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box b1">
+        <div class="img">
+          <img class="img" src="ganesha.jpg" alt="Your image" />
+        </div>
+      </div>
+      <div class="box b2">
+        <label for="name" id="name">Brijendra raj Tiwari</label>
+      </div>
+      <div class="box b3">
+        <label for="" id="enrollment-no">12554879844</label>
+      </div>
+      <div class="box b4">
+        <label for="" id="branch">CO</label>
+        <label for="" id="semester">_6i</label>
+      </div>
+      <div class="box b5">
+        <label for="" id="division">A</label>
+        <label for="" id="batch">_Batch 5</label>
+      </div>
+      <div class="box b6">101</div>
+      <div class="box b7" id="datas">
+        <details class="dropdown">
+          <summary role="button">
+            <a class="button">Lectures</a>
+          </summary>
+          <ul>
+            <div class="drp" id="selectedItemsDetails">
+              <!-- <li><a href="#">At All.</a></li> -->
+            </div>
+          </ul>
+        </details>
+      </div>
+      <textarea
+        name="Reason"
+        class="box b8"
+        id=""
+        cols="30"
+        rows="10"
+        placeholder="Enter a Valid and Genuin reason!"
+      ></textarea>
+      <button
+        class="box b9"
+        onclick="window.location.href='Student_index.html'"
+      >
+        cancel
+      </button>
+      <button class="box b10" onclick="navigateToTargetPage()">Send</button>
+    </div>
+
+    <!-- <div id="selectedItemsDetails"> -->
+    <!-- Selected item details will be displayed here -->
+    <!-- </div> -->
+    <script>
+      // Retrieve selected item data from sessionStorage
+      const selectedItemsData = JSON.parse(
+        sessionStorage.getItem("selectedItemsData")
+      );
+
+      // Display selected item details
+      const selectedItemsDetails = document.getElementById(
+        "selectedItemsDetails"
+      );
+      selectedItemsData.forEach((itemData, index) => {
+        selectedItemsDetails.innerHTML += `
+        
+        <li><a href="#">${itemData.content}</a></li>
+      `;
+      });
+
+      const selectedItems = [];
+
+      function navigateToTargetPage() {
+        const selectedItemsData = [
+          {
+            content: document.getElementById("datas").innerHTML, // Store the innerHTML content of the div with id "datas"
+          },
+        ];
+        sessionStorage.setItem(
+          "selectedItemsData",
+          JSON.stringify(selectedItemsData)
+        );
+        window.location.href = "Student_index.html";
+      }
+
+      document
+        .getElementById("backButton")
+        .addEventListener("click", function () {
+          window.history.back();
+        });
+    </script>
+  </body>
+</html>
+
+<!-- `<div class="selected-item">
+<h2>Item ${index + 1}</h2>${itemData.content}  Display the innerHTML content of selected items
+</div>` -->

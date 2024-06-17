@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      data-purpose="Layout StyleSheet"
+      title="Web Awesome"
+      href="/css/app-wa-612dd696ed96d6777d290343ca9cef9d.css?vsn=d"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lemon&family=Markazi+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- <link rel="stylesheet" href="dropdown.css" /> -->
+    <title>Take leave</title>
+    <style>
+      * {
+        font-family: Bree Serif, Helvetica, sans-serif;
+      }
+      body {
+        margin: 0%;
+      }
+      .container {
+        height: 99.7vh;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 40vh 10vh 10vh 10vh 10vh;
+      }
+      .img {
+        height: 35vh;
+        width: 35vh;
+        border: 1px solid;
+        border-radius: 50%;
+        box-shadow: rgb(160, 158, 158) 0px 0px 94px 4px;
+      }
+
+      .prof {
+        position: absolute;
+        top: 1vh;
+        left: 3vw;
+        color: rgb(120, 71, 8);
+        text-shadow: 2px 19px 13px rgba(245, 245, 220, 1);
+        font-size: larger;
+      }
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: solid 1px; */
+      }
+      .inbox {
+        /* border: solid 1px; */
+        border-radius: 5px;
+        height: 7vh;
+        width: 95vw;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .icon {
+        border-right: solid 1px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        height: 7vh;
+        width: 20vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: aquamarine;
+      }
+      .labels {
+        /* border: solid 1px; */
+        height: 7vh;
+        width: 74.5vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e3edf7;
+        border: none;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        left: 15vw;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        overflow-y: auto;
+        height: 20vh;
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 20px;
+      }
+
+      .dropdown-content li {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .selected {
+        background-color: antiquewhite; /* Style for selected items */
+      }
+      .unselected {
+        background-color: #f9f9f9;
+      }
+
+      .select-limit {
+        cursor: not-allowed; /* Disable pointer events for the button when limit is reached */
+        /* opacity: 0.5; Reduce opacity for visual indication */
+        height: 100%;
+        width: 100%;
+      }
+      .buttons {
+        /* border: solid 1px; */
+        height: 6vh;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10vh;
+      }
+      input[type="submit"] {
+        height: 100%;
+        border-radius: 10px;
+        width: 40vw;
+        margin-right: 5vw;
+        background-color: aquamarine;
+      }
+      input[type="reset"] {
+        height: 100%;
+        border-radius: 10px;
+        width: 40vw;
+        margin-left: 5vw;
+        background-color: antiquewhite;
+      }
+
+      input[type="file"] {
+        margin-left: 10vw;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="header">profile</div> -->
+    <div class="container">
+      <div class="box b1">
+        <div class="prof">Edit Profile</div>
+
+        <div class="img">
+          <img
+            id="image-preview"
+            class="img"
+            src="#"
+            alt="Your image"
+            style="display: none"
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="inbox">
+          <div class="icon"><i class="fa-duotone fa-photo-film fa-xl"></i></div>
+          <input type="file" id="image-input" accept="image/*" />
+        </div>
+      </div>
+      <div class="box">
+        <div class="inbox">
+          <div class="icon"><i class="fa-solid fa-user-tie fa-xl"></i></div>
+          <input
+            class="labels"
+            type="text"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="inbox">
+          <div class="icon"><i class="fa-duotone fa-phone fa-xl"></i></div>
+          <input
+            class="labels"
+            type="number"
+            placeholder="Enter your contact no"
+            required
+          />
+        </div>
+      </div>
+      <div class="box">
+        <div class="inbox">
+          <div class="icon"><i class="fa-solid fa-books fa-xl"></i></div>
+
+          <div class="dropdown labels">
+            <button class="select-limit">Select Subjects (0/5)</button>
+            <div class="dropdown-content">
+              <li>Subject 1</li>
+              <li>Subject 2</li>
+              <li>Subject 3</li>
+              <li>Subject 4</li>
+              <li>Subject 5</li>
+              <li>Subject 6</li>
+              <li>Subject 7</li>
+              <li>Subject 8</li>
+              <li>Subject 9</li>
+              <li>Subject 10</li>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box buttons">
+        <input
+          type="reset"
+          value="Clear"
+          onclick="window.location.href='profile.html'"
+        />
+        <input type="submit" value="Save" onclick="" />
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const selectLimitButton = document.querySelector(".select-limit");
+        const dropdownOptions = document.querySelectorAll(
+          ".dropdown-content li"
+        );
+        const subjects = [];
+        let selectedCount = 0;
+
+        dropdownOptions.forEach((option) => {
+          option.addEventListener("click", function () {
+            if (!option.classList.contains("selected") && selectedCount < 5) {
+              option.classList.add("selected");
+              selectedCount++;
+              subjects.push(option.getAttribute("data-value"));
+            } else if (option.classList.contains("selected")) {
+              option.classList.remove("selected");
+              selectedCount--;
+              const index = subjects.indexOf(option.getAttribute("data-value"));
+              if (index !== -1) {
+                subjects.splice(index, 1);
+              }
+            }
+
+            updateSelectLimitButtonText();
+          });
+        });
+
+        function updateSelectLimitButtonText() {
+          selectLimitButton.textContent = `Select Subjects (${selectedCount}/5)`;
+          if (selectedCount === 5) {
+            selectLimitButton.classList.add("select-limit-max");
+          } else {
+            selectLimitButton.classList.remove("select-limit-max");
+          }
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const imageInput = document.getElementById("image-input");
+        const imagePreview = document.getElementById("image-preview");
+
+        imageInput.addEventListener("change", function (event) {
+          const file = event.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              imagePreview.src = e.target.result;
+              imagePreview.style.display = "block";
+            };
+            reader.readAsDataURL(file);
+          } else {
+            imagePreview.src = "#";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      data-purpose="Layout StyleSheet"
+      title="Web Awesome"
+      href="/css/app-wa-612dd696ed96d6777d290343ca9cef9d.css?vsn=d"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lemon&family=Markazi+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Check Attendance</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Bree Serif, Helvetica, sans-serif;
+        font-size: 4.5vw;
+      }
+      .student {
+        /* border: solid 1px; */
+        height: 17vh;
+        margin: 2%;
+        border-radius: 5px;
+        background-color: #e3edf7;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .s-detail {
+        width: 50vw;
+        height: 12vh;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        border-radius: 15px;
+        flex-direction: column;
+        justify-content: space-around;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .simage {
+        height: 10vh;
+        width: 10vh;
+        border-radius: 50%;
+      }
+      .student-name {
+        height: 7vh;
+        width: 50vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: solid 1px;
+        background-color: #fdb44b;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+      .roll-no {
+        width: 50vw;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f3cd88;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+      .barcontainer {
+        width: 14vw;
+        height: 16vh;
+        display: flex;
+        overflow: hidden;
+        align-items: end;
+        position: relative;
+        border-radius: 25px;
+        background-color: #809bb0fe;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .practical {
+        width: 100%;
+        height: 75%;
+        overflow: hidden;
+        border-radius: 25px;
+        box-sizing: border-box;
+        transform-origin: bottom;
+        animation: grow 1.5s ease-out forwards;
+      }
+      .practical {
+        background-color: #fde994;
+        /* display: flex; */
+      }
+      .persen {
+        /* border: solid 1px; */
+        width: 14vw;
+        height: 16vh;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @keyframes grow {
+        from {
+          transform: scaleY(0);
+        }
+      }
+      .subject {
+        /* border: solid 1px; */
+        width: 96%;
+        height: 7vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2%;
+      }
+      #subjectname {
+        /* border-bottom: solid 1px; */
+        height: 6vh;
+        width: 60vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f3cd88;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .list-container {
+        /* border: solid 1px; */
+        border-radius: 5px;
+        height: 72vh;
+        width: 95%;
+        margin: 0 2% 0 2%;
+        overflow-y: auto;
+        background-color: #e3edf7;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .list {
+        /* border: solid 1px; */
+        width: 92vw;
+        height: 6vh;
+        border-radius: 10px;
+        margin: 1vh 1.5vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .rollno {
+        height: 100%;
+        width: 13vw;
+        border-radius: 5px;
+        /* border: solid 1px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(248, 190, 45);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .name {
+        height: 100%;
+        width: 60vw;
+        border-radius: 5px;
+        /* border: solid 1px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: antiquewhite;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .status {
+        height: 100%;
+        width: 13vw;
+        border-radius: 5px;
+        /* border: solid 1px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: aquamarine;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="subject">
+      <div id="subjectname"></div>
+    </div>
+    <div id="container"></div>
+
+    <div class="list-container">
+      <div class="list">
+        <div class="rollno">100</div>
+        <div class="name">00:00:00</div>
+        <div class="status">P</div>
+      </div>
+      <div class="list">
+        <div class="rollno">100</div>
+        <div class="name">00:00:00</div>
+        <div class="status">P</div>
+      </div>
+      <div class="list">
+        <div class="rollno">100</div>
+        <div class="name">00:00:00</div>
+        <div class="status">P</div>
+      </div>
+    </div>
+    <script>
+      var subdata = sessionStorage.getItem("studentdetails");
+
+      document.getElementById(
+        "container"
+      ).innerHTML = `<div class="student">${subdata}</div>`;
+      console.log(subdata);
+      var subjectname = sessionStorage.getItem("subjectname");
+
+      document.getElementById("subjectname").innerHTML = subjectname;
+
+      var studname = document.querySelector(".student-name").innerHTML;
+      studname = studname.replace(/\s+/g, "_");
+      console.log(studname);
+      var subject = document.getElementById("subjectname").innerHTML;
+
+      var rollno = document.querySelector(".roll-no").innerHTML;
+
+      console.log(rollno);
+
+      // var division = "b2";
+      // const address = "13.127.193.171";
+      const address = "localhost";
+
+      fetch(`http://${address}:3014/studentlist`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: `SELECT DATE,${studname} FROM ${subject} WHERE ${studname} <> 'null'`,
+        }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(" 2nd Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          const datas = JSON.parse(data);
+          console.log(datas);
+          var content = "";
+          datas.forEach((D, index) => {
+            // console.log(datas[index].DATE);
+            var status = D[studname];
+            console.log(status);
+            // console.log(datas[index].name);
+
+            content += `<div class="list">
+                      <div class="rollno">${rollno}</div>
+        <div class="name">${datas[index].DATE}</div>
+        <div class="status">${status}</div>
+      </div>`;
+          });
+          // console.log(content)
+          document.querySelector(".list-container").innerHTML = content;
+
+          var colorElements = document.querySelectorAll(".status");
+          colorElements.forEach(function (element) {
+            var colorValue = element.innerHTML;
+            if (colorValue === "A") {
+              element.style.backgroundColor = "red";
+            }
+          });
+        })
+        .catch((error) => console.error("Error:", error));
+    </script>
+  </body>
+</html>

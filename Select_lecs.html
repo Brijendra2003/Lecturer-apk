@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lemon&family=Markazi+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Select</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Bree Serif, Helvetica, sans-serif;
+      }
+      .header {
+        text-align: center;
+        font-size: 4vh;
+        color: rgb(120, 71, 8);
+        text-shadow: 2px 19px 13px rgba(245, 245, 220, 1);
+        margin-bottom: 2vh;
+      }
+      .parent-container {
+        display: flex;
+        height: 83vh;
+      }
+
+      .day-time-cotainer {
+        display: grid;
+        grid-template-columns: 33vw;
+        grid-gap: 0.5vh;
+        margin: 0% 1% 5% 2%;
+        grid-template-rows: repeat(7, 11.2vh);
+      }
+      .container {
+        margin: 0% 2% 3% 0%;
+        display: grid;
+        grid-template-columns: repeat(6, 33vw);
+        grid-template-rows: repeat(7, 11.2vh);
+        grid-gap: 0.5vh;
+        overflow-x: auto;
+      }
+      .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px;
+        border-radius: 3px;
+        font-size: 2vh;
+        text-align: center;
+        background-color: #e3edf7;
+      }
+      #dt {
+        background: linear-gradient(
+          to top right,
+          antiquewhite calc(50% - 1px),
+          black,
+          aquamarine calc(50% + 1px)
+        );
+      }
+      .day {
+        position: relative;
+        left: 8vw;
+      }
+      .time {
+        position: relative;
+        top: 1vh;
+        right: 7vw;
+      }
+      .days {
+        background-color: aquamarine;
+      }
+      .times {
+        /* padding: 22px; */
+        background-color: antiquewhite;
+      }
+      .buttons {
+        height: 9vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .btn {
+        border-radius: 5px;
+        width: 45%;
+        height: 90%;
+        font-family: Bree Serif, Helvetica, sans-serif;
+      }
+      .clear {
+        background-color: antiquewhite;
+      }
+      .proceed {
+        background-color: aquamarine;
+      }
+      .proceed:hover,
+      .clear:hover {
+        background-color: #e3edf7;
+      }
+      .selected {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header" id="slectpage">Select the Lectures</div>
+    <div class="parent-container">
+      <div class="day-time-cotainer">
+        <div class="box" id="dt">
+          <div class="day">Day</div>
+          <div class="time">Time</div>
+        </div>
+        <div class="box times" id="lec1-time">Time</div>
+        <div class="box times" id="lec2-time">Time</div>
+        <div class="box times" id="lec3-time">Time</div>
+        <div class="box times" id="lec4-time">Time</div>
+        <div class="box times" id="lec5-time">Time</div>
+        <div class="box times" id="lec6-time">Time</div>
+      </div>
+      <div class="container">
+        <div class="box days">Monday</div>
+        <div class="box days">Tuesday</div>
+        <div class="box days">Wednesday</div>
+        <div class="box days">Thursday</div>
+        <div class="box days">Friday</div>
+        <div class="box days">Saturday</div>
+
+        <div class="box item" id="mon-lec1">ranak</div>
+        <div class="box item" id="">
+          MAD <br />
+          MR samarth Pandit
+        </div>
+        <div class="box item" id="">Brijendra Tiwari</div>
+        <div class="box item" id="">Dabba 12</div>
+        <div class="box item" id="">Dabba 13</div>
+        <div class="box item" id="">Dabba 14</div>
+
+        <div class="box item" id="mon-lec2">Dabba 16</div>
+        <div class="box item" id="">Dabba 17</div>
+        <div class="box item" id="">Dabba 18</div>
+        <div class="box item" id="">Dabba 19</div>
+        <div class="box item" id="">Dabba 20</div>
+        <div class="box item" id="">Dabba 21</div>
+
+        <div class="box item" id="mon-lec3">Dabba 23</div>
+        <div class="box item" id="">Dabba 24</div>
+        <div class="box item" id="">Dabba 25</div>
+        <div class="box item" id="">Dabba 26</div>
+        <div class="box item" id="">Dabba 27</div>
+        <div class="box item" id="">Dabba 28</div>
+
+        <div class="box item" id="mon-lec4">Dabba 30</div>
+        <div class="box item" id="">Dabba 31</div>
+        <div class="box item" id="">Dabba 32</div>
+        <div class="box item" id="">Dabba 33</div>
+        <div class="box item" id="">Dabba 34</div>
+        <div class="box item" id="">Dabba 35</div>
+
+        <div class="box item" id="mon-lec5">Dabba 37</div>
+        <div class="box item" id="">Dabba 38</div>
+        <div class="box item" id="">Dabba 39</div>
+        <div class="box item" id="">Dabba 40</div>
+        <div class="box item" id="">Dabba 41</div>
+        <div class="box item" id="">Dabba 42</div>
+
+        <div class="box item" id="mon-lec6">Dabba 44</div>
+        <div class="box item" id="">Dabba 45</div>
+        <div class="box item" id="">Dabba 46</div>
+        <div class="box item" id="">Dabba 47</div>
+        <div class="box item" id="">Dabba 48</div>
+        <div class="box item" id="">Dabba 49</div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="clear btn" id="backButton">Cancel</button>
+      <button
+        class="proceed btn"
+        id="myButton"
+        onclick="navigateToTargetPage()"
+      >
+        Proceed
+      </button>
+    </div>
+    <script>
+      const selectedItems = [];
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const items = document.querySelectorAll(".item");
+
+        const myButton = document.getElementById("myButton");
+
+        myButton.disabled = true; // Disable the button by default
+
+        items.forEach(function (item) {
+          item.addEventListener("click", function () {
+            // Toggle selection state
+            if (selectedItems.includes(this)) {
+              // Deselect item
+              const index = selectedItems.indexOf(this);
+              selectedItems.splice(index, 1);
+              this.classList.remove("selected");
+            } else {
+              // Select item
+              selectedItems.push(this);
+              this.classList.add("selected");
+            }
+            // Enable the button if any item is selected
+            myButton.disabled = selectedItems.length === 0;
+          });
+        });
+      });
+
+      function navigateToTargetPage() {
+        const selectedItemsData = selectedItems.map((item) => ({
+          content: item.innerHTML, // Store the innerHTML content of selected items
+        }));
+        sessionStorage.setItem(
+          "selectedItemsData",
+          JSON.stringify(selectedItemsData)
+        );
+        window.location.href = "proceed.html";
+      }
+
+      document
+        .getElementById("backButton")
+        .addEventListener("click", function () {
+          window.history.back();
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,
+    <link
+      rel="stylesheet"
+      data-purpose="Layout StyleSheet"
+      title="Web Awesome"
+      href="/css/app-wa-612dd696ed96d6777d290343ca9cef9d.css?vsn=d"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lemon&family=Markazi+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Track Attendance</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Bree Serif, Helvetica, sans-serif;
+      }
+
+      .header {
+        text-align: center;
+        font-size: xx-large;
+        /* color:beige; */
+        color: rgb(120, 71, 8);
+        text-shadow: 2px 19px 13px rgba(245, 245, 220, 1);
+        /* margin-bottom: 3vh; */
+      }
+      .selectbutton {
+        /* border: solid 1px; */
+        width: 100%;
+        height: 7vh;
+        margin: 2vh 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .selectbtn {
+        height: 6vh;
+        width: 80vw;
+        background-color: aquamarine;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .subject {
+        /* border: solid 1px; */
+        height: 100%;
+      }
+      .sub {
+        margin: 2vh 5vw;
+        border: solid 1px;
+        min-height: 8vh;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #f8da5b;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      /* .first-container {
+        display: none;
+      } */
+      .second-contaner {
+        /* border: solid 1px; */
+        width: 100;
+        height: 92vh;
+        display: none;
+      }
+      .student-container {
+        /* border: solid 1px;  */
+        width: 100;
+        height: 84vh;
+        overflow-y: auto;
+      }
+      .lable {
+        /* border: solid 1px; */
+        height: 7vh;
+        /* width: 80vw; */
+        border-radius: 10px;
+        /* background-color: aquamarine; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2% 7% 2% 7%;
+      }
+      .subject-n,
+      .Div-n {
+        border: solid 1px;
+        border-radius: 10px;
+        height: 100%;
+        width: 40vw;
+        display: flex;
+        background-color: #e3edf7;
+      }
+      .fa-solid {
+        border-right: solid 1px;
+        width: 15vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        background-color: aquamarine;
+      }
+      .d-n,
+      .s-n {
+        /* border: solid 1px; */
+        display: flex;
+        width: 25vw;
+        align-items: center;
+        justify-content: center;
+      }
+      .student {
+        /* border: solid 1px; */
+        height: 17vh;
+        margin: 2%;
+        border-radius: 5px;
+        background-color: #e3edf7;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .s-detail {
+        width: 50vw;
+        height: 12vh;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        border-radius: 15px;
+        flex-direction: column;
+        justify-content: space-around;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .simage {
+        height: 10vh;
+        width: 10vh;
+        border-radius: 50%;
+      }
+      .student-name {
+        height: 7vh;
+        width: 50vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: solid 1px;
+        background-color: #fdb44b;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+      .roll-no {
+        width: 50vw;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f3cd88;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+      .barcontainer {
+        width: 14vw;
+        height: 16vh;
+        display: flex;
+        overflow: hidden;
+        align-items: end;
+        position: relative;
+        border-radius: 25px;
+        background-color: #809bb0fe;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .practical,
+      .theory {
+        width: 100%;
+        height: 75%;
+        /* update height as per as the database */
+        overflow: hidden;
+        border-radius: 25px;
+        box-sizing: border-box;
+        transform-origin: bottom;
+        animation: grow 1.5s ease-out forwards;
+      }
+      .persen {
+        /* border: solid 1px; */
+        width: 14vw;
+        height: 16vh;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+      }
+      .practical {
+        background-color: #fde994;
+        display: flex;
+      }
+      @keyframes grow {
+        from {
+          transform: scaleY(0);
+        }
+      }
+      .divission {
+        /* border: solid 1px; */
+        width: 60vw;
+        margin: 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+      }
+      .div {
+        border: solid 1px;
+        height: 5vh;
+        margin: 1%;
+        width: 100%;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(172, 246, 222);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .divission.show {
+        display: flex;
+      }
+      .fa-arrow-left {
+        border: none;
+        /* border-radius: 10px; */
+        background-color: transparent;
+        height: 4vh;
+        width: 40px;
+        position: absolute;
+        top: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Attendance Report</div>
+    <div class="first-container" id="fc">
+      <div class="selectbutton">
+        <button class="selectbtn">Select the Subject</button>
+      </div>
+      <div class="subject">
+        <div class="sub" onclick="selectedsub(this)">
+          <div class="sub-n" id="subject1">Subject 1</div>
+          <div class="divission">
+            <div class="div" onclick="seletedsubdiv(event)">b1</div>
+            <div class="div" onclick="seletedsubdiv(event)">b2</div>
+            <div class="div" onclick="seletedsubdiv(event)">b3</div>
+            <div class="div" onclick="seletedsubdiv(event)">b4</div>
+            <div class="div" onclick="seletedsubdiv(event)">b5</div>
+          </div>
+        </div>
+        <div class="sub" onclick="selectedsub(this)">
+          <div class="sub-n" id="subject2">Subject 2</div>
+          <div class="divission">
+            <div class="div" onclick="seletedsubdiv(event)">b1</div>
+            <div class="div" onclick="seletedsubdiv(event)">b2</div>
+            <div class="div" onclick="seletedsubdiv(event)">b3</div>
+            <div class="div" onclick="seletedsubdiv(event)">b4</div>
+            <div class="div" onclick="seletedsubdiv(event)">b5</div>
+          </div>
+        </div>
+        <div class="sub" onclick="selectedsub(this)">
+          <div class="sub-n" id="subject3">Subject 3</div>
+          <div class="divission">
+            <div class="div" onclick="seletedsubdiv(event)">b1</div>
+            <div class="div" onclick="seletedsubdiv(event)">b2</div>
+            <div class="div" onclick="seletedsubdiv(event)">b3</div>
+            <div class="div" onclick="seletedsubdiv(event)">b4</div>
+            <div class="div" onclick="seletedsubdiv(event)">b5</div>
+          </div>
+        </div>
+        <div class="sub" onclick="selectedsub(this)">
+          <div class="sub-n" id="subject4">Subject 4</div>
+          <div class="divission">
+            <div class="div" onclick="seletedsubdiv(event)">b1</div>
+            <div class="div" onclick="seletedsubdiv(event)">b2</div>
+            <div class="div" onclick="seletedsubdiv(event)">b3</div>
+            <div class="div" onclick="seletedsubdiv(event)">b4</div>
+            <div class="div" onclick="seletedsubdiv(event)">b5</div>
+          </div>
+        </div>
+        <div class="sub" onclick="selectedsub(this)">
+          <div class="sub-n" id="subject5">Subject 5</div>
+          <div class="divission">
+            <div class="div" onclick="seletedsubdiv(event)">b1</div>
+            <div class="div" onclick="seletedsubdiv(event)">b2</div>
+            <div class="div" onclick="seletedsubdiv(event)">b3</div>
+            <div class="div" onclick="seletedsubdiv(event)">b4</div>
+            <div class="div" onclick="seletedsubdiv(event)">b5</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="second-contaner" id="sc">
+      <div class="back">
+        <i class="fa-solid fa-arrow-left fa-xl" onclick="backe()"></i>
+      </div>
+      <div class="lable">
+        <div class="subject-n">
+          <i class="fa-solid fa-books fa-xl"></i>
+          <div class="s-n" id="subject-name">Raunak</div>
+        </div>
+        <div class="Div-n">
+          <i class="fa-solid fa-screen-users fa-xl"></i>
+          <div class="d-n" id="d-n"></div>
+        </div>
+      </div>
+
+      <div class="student-container" id="student-container">
+        <div class="student" onclick="Storedata(this)">
+          <div class="s-detail">
+            <div class="student-name">Brijendra Raj Tiwari</div>
+            <div class="roll-no">101</div>
+          </div>
+        </div>
+        <div class="student" onclick="Storedata(this)">
+          <div class="s-detail">
+            <div class="student-name">Kinjal Udaykant Mishra</div>
+            <div class="roll-no">94</div>
+          </div>
+        </div>
+        <div class="student" onclick="Storedata(this)">
+          <div class="s-detail">
+            <div class="student-name">Damini Vishnukant Mishra</div>
+            <div class="roll-no">96</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const address = "13.127.193.171";
+    // const address = "localhost";
+
+    function selectedsub(element) {
+      var subjectname = element.querySelector(".sub-n").innerHTML;
+
+      // Toggle the visibility of the child divission
+      var divission = element.querySelector(".divission");
+      divission.classList.toggle("show");
+
+      var subject = document.querySelector(".s-n");
+      subject.innerHTML = subjectname;
+    }
+
+    function seletedsubdiv(event) {
+      var clickedDiv = event.target;
+      var divisionname = clickedDiv.innerHTML;
+      var division = document.querySelector(".d-n");
+      division.innerHTML = divisionname;
+
+      var secondcontaner = document.getElementById("sc");
+      secondcontaner.style.display = "block";
+      document.getElementById("fc").style.display = "none";
+      // score();
+      callforstudentlist();
+    }
+    function backe() {
+      var secondcontaner = document.getElementById("sc");
+      secondcontaner.style.display = "none";
+      document.getElementById("fc").style.display = "block";
+    }
+
+    // function for handelling databases and score
+    // function score() {
+    //   var sp1 = 75; // Update score as your datbase
+    //   var p1 = document.getElementById("p1");
+    //   let pr1 = 0;
+    //   setInterval(() => {
+    //     if (pr1 == sp1) {
+    //       clearInterval();
+    //     } else {
+    //       pr1 += 1;
+    //       p1.innerHTML = pr1 + "%";
+    //     }
+    //   }, 20);
+    //   document.getElementById("sp1").style.height = sp1 + "%";
+    // }
+
+    function Storedata(div) {
+      var studentdata = div.innerHTML;
+      sessionStorage.setItem("studentdetails", studentdata);
+      subname();
+    }
+
+    function subname() {
+      var subjectname = document.getElementById("subject-name").innerHTML;
+      sessionStorage.setItem("subjectname", subjectname);
+      window.top.location.href = "Checkattendance.html";
+    }
+
+    // var username = "Samiran Maity";
+    var username = Android.getUsername();
+
+    // username = username.replace(/\s+/g, "_");
+    fetch(`http://${address}:3014/subjects`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `SELECT subject1, subject2, subject3, subject4, subject5 FROM lecturer WHERE name = '${username}'`,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const parsedData = JSON.parse(data); // Parse the JSON string into an object
+        const subjects = Object.keys(parsedData[0]); // Extract the subject column names
+
+        subjects.forEach((subject, index) => {
+          document.getElementById(`subject${index + 1}`).innerHTML =
+            parsedData[0][subject];
+        });
+      })
+      .catch((error) => console.error("Error:", error));
+
+    // second method
+    function callforstudentlist() {
+      var division = document.getElementById("d-n").innerHTML;
+      console.log(division);
+      fetch(`http://${address}:3014/studentlist`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: `SELECT rollno, name FROM student WHERE batch = '${division}'`,
+        }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(" 2nd Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          const datas = JSON.parse(data);
+          console.log(datas);
+          var content = "";
+          datas.forEach((rollno, index) => {
+            // console.log(datas[index].rollno);
+            // console.log(datas[index].name);
+
+            content += `<div class="student" onclick="Storedata(this)">
+          <div class="s-detail">
+            <div class="student-name">${datas[index].name}</div>
+            <div class="roll-no">${datas[index].rollno}</div>
+          </div>
+        </div>`;
+          });
+          // console.log(content)
+          document.getElementById("student-container").innerHTML = content;
+        })
+        .catch((error) => console.error("Error:", error));
+    }
+  </script>
+</html>
